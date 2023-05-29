@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link href="aulas-31-37/public/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Modal</h1>
+        <button class="btn btn-primary" data-nome="Rafaela" data-toggle="modal" data-target="#conteudoModal">Mensagem
+            para Rafaela</button>
+        <button class="btn btn-primary" data-nome="Vitor" data-toggle="modal" data-target="#conteudoModal">Mensagem
+            para Vitor</button>
+        <!--Modal estrutura padrao-->
+        <div id="conteudoModal" class="modal fade"> <!--Para o modal fehcar se você clicar fora dele-->
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--cabeçalho-->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Meu Modal</h4>
+                        <!--BOTÃO DE FECHAR-->
+                        <button class="close" data-dismiss="modal" arial-label="fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--CONTEUDO-->
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <span>Destinatário: </span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" name="para" class="form-control">
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-4">
+                                <span>Mensagem: </span>
+                            </div>
+                            <div class="col-8">
+                                <textarea class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--RODAPE-->
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                        <button class="btn btn-success" data-dismiss="modal">Enviar</button>
+                    </div>
+            
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <!-- JS -->
+        <script src="aulas-31-37/public/js/jquery.js"></script>
+        <script src="aulas-31-37/public/js/bootstrap.bundle.min.js"></script>
+        <script>
+            $('#conteudoModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('nome'); // informação que esta dentro do data-nome
+                var modal = $(this);
+                modal.find('.modal-title').text('Mensagem para ' + recipient);
+                modal.find('.modal-body input').val(recipient);
+            });
+        </script>
+    </footer>
+
+</body>
+
+</html>

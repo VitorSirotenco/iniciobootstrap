@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Popover e ToolTip</title>
+	<meta charset="utf-8">
+
+	<!-- CSS -->
+	<link href="aulas-31-37/public/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.tt{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			margin: 0%;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="container">
+		<h1>Popovers e ToolTip</h1>
+		<button class="btn btn-primary" data-toggle="popover" data-content="Isso é um popover"
+			data-placement="left">Meu Popover</button>
+			<button class="btn btn-success" data-toggle="tooltip" title="ToolTip">Meu Tooltip</button> <!--informações do popover-->
+	</div>
+	
+	<footer>
+		<!-- JS -->
+		<script src="aulas-31-37/public/js/jquery.js"></script>
+		<script src="aulas-31-37/public/js/bootstrap.bundle.min.js"></script>
+		<script>
+			$(function () {
+				$('[data-toggle="popover"]').popover()
+			});
+			$(function(){
+				$('[data-toggle="tooltip"]').tooltip()
+			});
+		</script>
+
+	</footer>
+
+</body>
+
+</html>

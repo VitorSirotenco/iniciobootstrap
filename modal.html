@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link href="aulas-31-37/public/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Modal</h1>
+        <button class="btn btn-info" data-toggle="modal" data-target="#conteudoModal">Ativar Modal</button>
+        <!--Modal estrutura padrao-->
+        <div id="conteudoModal" class="modal fade"> <!--Para o modal fehcar se você clicar fora dele-->
+            <div class="modal-dialog modal-dialog-centered"> <!--segunda propriedade para o modal abrir centralizado na tela-->
+                <div class="modal-content">
+                    <!--cabeçalho-->
+                    <div class="modal-header">
+                        <h4>Meu Modal</h4>
+                        <!--BOTÃO DE FECHAR-->
+                        <button class="close" data-dismiss="modal" arial-label="fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--CONTEUDO-->
+                    <div class="modal-body">
+                        Texto do meu modal!
+                    </div>
+
+                    <!--RODAPE-->
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal">fechar</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <!-- JS -->
+        <script src="aulas-31-37/public/js/jquery.js"></script>
+        <script src="aulas-31-37/public/js/bootstrap.bundle.min.js"></script>
+    </footer>
+
+</body>
+
+</html>
